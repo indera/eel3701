@@ -1,0 +1,417 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	PRINT_OPTIONS = "Print_options_version 6\
+range_start 0ps\
+range_end 500.0ns\
+width 1\
+names_percentage 25\
+comments 1\
+grid_lines 1\
+time_bars 1\
+name_every_page 0\
+expand_groups 0\
+print_all 1\
+print_row_height 100";
+	PAGE_SETUP = "header_footer\
+Date: %D\
+%f\
+Project: %j\
+\
+Page %p of %P\
+Revision: %a\
+margin\
+1\
+1\
+1\
+1\
+orientation\
+2\
+paper_size\
+1\
+paper_source\
+7\
+fit_page_wide\
+1\
+fit_page_tall\
+1\
+";
+	DATA_OFFSET = 0.0;
+	DATA_DURATION = 520.0;
+	SIMULATION_TIME = 520.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 10.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("A")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("B")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("CLK")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("Cout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("SUM")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("Q")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("Reset")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+TRANSITION_LIST("A")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 120.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 90.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 10.0;
+	}
+}
+
+TRANSITION_LIST("B")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 90.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 90.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 40.0;
+	}
+}
+
+TRANSITION_LIST("CLK")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 10.0;
+		NODE
+		{
+			REPEAT = 17;
+			LEVEL 0 FOR 15.0;
+			LEVEL 1 FOR 15.0;
+		}
+	}
+}
+
+TRANSITION_LIST("Cout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 39.175;
+		LEVEL 1 FOR 112.735;
+		LEVEL 0 FOR 97.265;
+		LEVEL 1 FOR 149.538;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 0.462;
+		LEVEL 0 FOR 59.538;
+		LEVEL 1 FOR 0.462;
+		LEVEL 0 FOR 30.825;
+	}
+}
+
+TRANSITION_LIST("SUM")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 61.894;
+		LEVEL 1 FOR 7.582;
+		LEVEL 0 FOR 82.967;
+		LEVEL 1 FOR 37.033;
+		LEVEL 0 FOR 30.045;
+		LEVEL 1 FOR 29.955;
+		LEVEL 0 FOR 22.418;
+		LEVEL 1 FOR 0.549;
+		LEVEL 0 FOR 29.451;
+		LEVEL 1 FOR 7.627;
+		LEVEL 0 FOR 59.955;
+		LEVEL 1 FOR 22.967;
+		LEVEL 0 FOR 7.078;
+		LEVEL 1 FOR 120.0;
+		LEVEL 0 FOR 0.479;
+	}
+}
+
+TRANSITION_LIST("Q")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 59.898;
+		LEVEL 1 FOR 90.549;
+		LEVEL 0 FOR 119.451;
+		LEVEL 1 FOR 0.549;
+		LEVEL 0 FOR 29.451;
+		LEVEL 1 FOR 90.549;
+		LEVEL 0 FOR 129.553;
+	}
+}
+
+TRANSITION_LIST("Reset")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 22.6;
+		LEVEL 0 FOR 2.4;
+		NODE
+		{
+			REPEAT = 4;
+			LEVEL 1 FOR 117.6;
+			LEVEL 0 FOR 2.4;
+		}
+		LEVEL 1 FOR 15.0;
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "A";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "B";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "SUM";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Q";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "CLK";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Reset";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Cout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 0;
+}
+
+TIME_BAR
+{
+	TIME = 30000;
+	MASTER = TRUE;
+}
+
+TIME_BAR
+{
+	TIME = 60000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 90000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 120000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 150200;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 180000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 210000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 240000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 270000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 300000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 330000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 360000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 390000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 420000;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 450000;
+	MASTER = FALSE;
+}
+;
